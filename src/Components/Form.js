@@ -84,41 +84,43 @@ const Form = () => {
   }
 
   return (
-    <div style={{ textAlign: "center", color:"mediumorchid" }}>
-      {!submit && (
-      <div className = "Form">
-        <form onSubmit={onSubmit}>
-          <h1>Enter your zipcode to view the weather!</h1>
-          <p>Enter zip code and press return/enter:</p>
-          <input
-            className="zip"
-            value={zipCode || ""}
-            type="text"
-            name="zip"
-            id="zip"
-            onChange={(event) => {
-              const { value } = event.target;
-              setZipCode(value);
-            }}
-          />
-        </form>
-        <img src={weather_pics} alt="Weather"/>
-      </div>)}
-      <div> 
-        {submit && (
+    <div style={{ textAlign: "center", color: "mediumorchid" }}>
+      {!submit ? (
+        <div className="Form">
+          <form onSubmit={onSubmit}>
+            <h1>Enter your zipcode to view the weather!</h1>
+            <p>Enter zip code and press return/enter:</p>
+            <input
+              className="zip"
+              value={zipCode || ""}
+              type="text"
+              name="zip"
+              id="zip"
+              onChange={(event) => {
+                const { value } = event.target;
+                setZipCode(value);
+              }}
+            />
+          </form>
+          <img src={weather_pics} alt="Weather" />
+        </div>
+      ) : (
+        <>
           <div className="Current">
-            <Header_Current temp={currentTemp} weather={currentMain}/>
+            <Header_Current temp={currentTemp} weather={currentMain} />
           </div>
-        )}
-      </div>
-      <div> 
-        {submit && (
-          <div className = "Switch" >
-          <Switch hourTemps={hourTemps} hourMains={hourFinals} dayTemps={dayTemps} dayMains={dayFinals}/>
+
+          <div className="Switch">
+            <Switch
+              hourTemps={hourTemps}
+              hourMains={hourFinals}
+              dayTemps={dayTemps}
+              dayMains={dayFinals}
+            />
           </div>
-        )}
-      </div>
-      </div>
+        </>
+      )}
+    </div>
   );
 }
 

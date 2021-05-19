@@ -18,24 +18,19 @@ const Switch = ({hourTemps, hourMains, dayTemps, dayMains}) =>{
         }
     }
 
-    return(
-        <div className="Switch">
+    return (
+      <div className="Switch">
         <div>
-            <button onClick={onClick}>
-                Switch Hourly/Daily
-            </button>
+          <button onClick={onClick}>Switch Hourly/Daily</button>
         </div>
         <div>
-            {isHourly && (
-                <Hourly temps={hourTemps} mains={hourMains}/>
-            )}
+          {isHourly ? (
+            <Hourly temps={hourTemps} mains={hourMains} />
+          ) : (
+            <Daily temps={dayTemps} mains={dayMains} />
+          )}
         </div>
-        <div>
-            {!isHourly && (
-                <Daily temps={dayTemps} mains={dayMains}/>
-            )}
-        </div>
-        </div>
+      </div>
     );
 };
 
