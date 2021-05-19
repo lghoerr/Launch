@@ -5,7 +5,7 @@ import weather_pics from '../images/weather_pics.png';
 
 const API_KEY = process.env.REACT_APP_api_key;
 
-const Form = (props) => {
+const Form = () => {
 
   const [hourWeather, setHourWeather] = useState([]); 
   const [dailyWeather, setDailyWeather] = useState([]);

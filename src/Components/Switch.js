@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import Hourly from "./Hourly";
 import Daily from "./Daily";
 
-const Switch = (props) =>{
+const Switch = ({hourTemps, hourMains, dayTemps, dayMains}) =>{
 
     const [name, setName] = useState("Hourly");
     const [isHourly, setIsHourly] = useState(false);
@@ -27,12 +27,12 @@ const Switch = (props) =>{
         </div>
         <div>
             {isHourly && (
-                <Hourly temps={props.hourTemps} mains={props.hourMains}/>
+                <Hourly temps={hourTemps} mains={hourMains}/>
             )}
         </div>
         <div>
             {!isHourly && (
-                <Daily temps={props.dayTemps} mains={props.dayMains}/>
+                <Daily temps={dayTemps} mains={dayMains}/>
             )}
         </div>
         </div>

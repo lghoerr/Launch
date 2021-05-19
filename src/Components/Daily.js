@@ -1,14 +1,14 @@
 import React from "react";
 
-const Daily = (props) => {
+const Daily = ({temps, mains}) => {
 
     return (
     <div style={{ textAlign: "center", color: "green" }}>
     <div className = "Daily">
     <u1>
-        {props.temps.map((value,index)=>{
+        {temps.map((value,index)=>{
 
-           return <div>Day: {index+1} -- Weather Forecast: {props.mains[index]} -- Temperature: {value}</div>
+           return <div>Day: {index+1} -- Weather Forecast: {mains[index]} -- Temperature: {value}</div>
         })}
         </u1>
     </div>
