@@ -1,5 +1,5 @@
 import React from 'react';
-import weather_icon from './weather_icon.png';
+import weather_icon from '../images/weather_icon.png';
 
 const Header_Current = (props) => {
 

@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import Switch from "./Switch";
 import Header_Current from "./Header_Current";
-import weather_pics from './weather_pics.png';
+import weather_pics from '../images/weather_pics.png';
 
 const API_KEY = process.env.REACT_APP_api_key;
 
